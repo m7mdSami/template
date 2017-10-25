@@ -1,0 +1,196 @@
+nav.navbar{
+    padding: 0;
+   background-color: #fff;
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0);
+   .logo{
+        color: $blue;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:hover{
+            color: $blue; 
+        }
+        &:focus{
+            color: $blue; 
+            outline: none;
+        }
+        &::before{
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid $blue;
+            border-left: 3px solid rgba(95, 148, 251, 0.35);
+            border-radius: 100%;
+            margin-right: 5px;
+            transform: rotate(39deg);
+        }
+   }
+   .menu{
+       width: 100%;
+       align-items: center;
+       .menu-nav{
+           display: flex;
+           align-items: center;
+           .nav-item {
+                .nav-link{
+                    color: $textGrayLight;
+                    padding: 20px;
+                    text-transform: capitalize
+                }
+                &:hover{
+                    .nav-link{
+                        color: $textGray;
+                        background-color: $main;
+                    }
+                }
+           }
+       }
+       .account{
+            display: flex;
+            align-items: center;
+            img{
+                width: 35px;
+                border-radius: 4px;
+                margin: 0 5px;
+            }
+            span{
+                color: $textGrayLight
+            }
+            .notification{
+                position: relative;
+                &:after{
+                    content: ' ';
+                    width: 5px;
+                    display: block;
+                    height: 5px;
+                    background: #d00e0e;
+                    position: absolute;
+                    top: 34%;
+                    right: 2px;
+                    border-radius: 100%;
+                }
+            }
+       }
+       .search{
+           color: $textGrayLight;
+           input{
+               border: none;
+               outline: none;
+               padding: 10px;
+               &::focus{
+                   border: none;
+                   outline: none
+               }
+           }
+       }
+   }
+}
+
+@media only screen and (min-width : 992px) {
+    
+    .icon{
+        display: none;
+    }
+
+}
+@media only screen and (max-width : 992px) {
+
+    .icon {
+        float: right;
+        margin-top: 10px;
+        cursor: pointer;
+        display: block;
+    }
+    .icon span {
+        color: $blue;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 17px;
+        float: left;
+        position: relative;
+        left: -65px;
+    }
+    .icon i {
+        width: 25px;
+        height: 3px;
+        background: $blue;
+        display: block;
+        position: relative;
+        margin: 5px 0;
+        margin-left: 10px;
+        right: 0;
+        bottom: 6px;
+        -webkit-transition:all .1s ease-in-out;
+        -moz-transition:all .1s ease-in-out;
+        -o-transition:all .1s ease-in-out;
+        transition:all .1s ease-in-out	
+    }
+    .icon a.active i:nth-of-type(2) {
+        visibility: hidden
+    }
+    .icon a.active i:last-of-type {
+        bottom: 13px;
+        -webkit-transform: rotateZ(45deg);
+        -moz-transform: rotateZ(45deg);
+        -ms-transform: rotateZ(45deg);
+        -o-transform: rotateZ(45deg);
+        transform: rotateZ(45deg);
+    }
+    .icon a.active i:first-of-type {
+        top: 3px;
+        -webkit-transform: rotateZ(-45deg);
+        -moz-transform: rotateZ(-45deg);
+        -ms-transform: rotateZ(-45deg);
+        -o-transform: rotateZ(-45deg);
+        transform: rotateZ(-45deg);
+    }
+    .menu-nav {
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        background: #fff;
+        left: 0;
+        flex-direction: column;
+        z-index: 3;
+    }
+    .account{
+        .name{
+            display: none;
+        }
+    }
+    nav.navbar{
+        .menu{
+            justify-content: flex-end;
+            .menu-nav{
+                display: none;
+                .nav-item{
+                    width: 100%;
+                }
+            }
+            .search{
+                cursor: pointer;
+                input{
+                    width: 0;
+                }
+            }
+        }
+    }
+    .show-search{
+        width: auto !important;
+        -webkit-transition:all .1s ease-in-out;
+        -moz-transition:all .1s ease-in-out;
+        -o-transition:all .1s ease-in-out;
+        transition:all .1s ease-in-out	
+    } 
+    .show-menu{
+        display: block !important;
+    }
+}
+@media (max-width: 991px){
+    .navbar-toggleable-md>.container {
+        width: 100%;
+        padding: 0 15px
+    }
+}
+
