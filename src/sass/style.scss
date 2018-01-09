@@ -1,0 +1,14 @@
+$bgColor: rgb(225, 16, 16);
+
+body{
+  background:$bgColor;
+  display: flex;
+  justify-content: center
+}
+h1{
+  text-transform: uppercase;
+  color: #ff0;
+  &.sam{
+    color: #ff0
+  }
+}
